@@ -32,6 +32,8 @@ tasks.named('test') {
 }
 
 processResources {
+	exclude("**/*.bak")
+
 	def version = project.version
 	inputs.property "version", version
 

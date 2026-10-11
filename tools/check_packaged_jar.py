@@ -26,6 +26,9 @@ def main() -> int:
         duplicate_names = sorted(name for name, count in Counter(names).items() if count > 1)
         if duplicate_names:
             raise ValueError(f"JAR contains duplicate resource names: {duplicate_names}")
+        backup_entries = sorted(name for name in names if name.endswith(".bak"))
+        if backup_entries:
+            raise ValueError(f"JAR contains backup files: {backup_entries}")
         missing = sorted(EXPECTED.difference(names))
         if missing:
             raise ValueError(f"JAR is missing required entries: {missing}")

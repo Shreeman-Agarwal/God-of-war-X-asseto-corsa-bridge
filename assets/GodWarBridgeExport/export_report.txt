@@ -1,0 +1,12 @@
+Blender version: 5.2.2 LTS
+Scene: Scene
+Mesh objects: 198
+Total vertices: 132881
+Total polygons: 178595
+Materials: 59
+Images: 71
+Packed images: 69
+Export operator result: {'FINISHED'}
+Exported file: C:\Projects\GodWarBridge\assets\GodWarBridgeExport\pagani_huayra.glb
+Export size bytes: 15843248
+RESULT: SUCCESS

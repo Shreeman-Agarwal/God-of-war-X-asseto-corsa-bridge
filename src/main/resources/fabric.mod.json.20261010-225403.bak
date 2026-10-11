@@ -1,0 +1,27 @@
+
+{
+	"schemaVersion": 1,
+	"id": "godwarbridge",
+	"version": "${version}",
+	"name": "GodWarBridge",
+	"description": "Connects Minecraft with Assetto Corsa telemetry and gameplay systems.",
+	"authors": [
+		"GodWarBridge"
+	],
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.godwarbridge.GodWarBridge"
+		],
+		"client": [
+			"com.godwarbridge.GodWarBridgeClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

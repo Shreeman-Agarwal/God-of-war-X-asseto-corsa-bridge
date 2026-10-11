@@ -7,7 +7,7 @@ import com.liy.blendlib.api.BlendModelKey;
 import com.liy.blendlib.fabric.client.entity.BlendEntityRenderer;
 import com.liy.blendlib.fabric.client.entity.BlendEntityRenderers;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommands;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
@@ -210,43 +210,43 @@ public class GodWarBridgeClient implements ClientModInitializer {
 
 	private static void registerCommands() {
 		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> dispatcher.register(
-				ClientCommandManager.literal("gwb")
-						.then(ClientCommandManager.literal("show").executes(context -> {
+				ClientCommands.literal("gwb")
+						.then(ClientCommands.literal("show").executes(context -> {
 							vehicleVisible = true;
 						context.getSource().sendFeedback(Component.literal("GodWarBridge vehicle shown when live telemetry is available."));
 							return 1;
 						}))
-						.then(ClientCommandManager.literal("hide").executes(context -> {
+						.then(ClientCommands.literal("hide").executes(context -> {
 							vehicleVisible = false;
 							removeVehicle();
 							context.getSource().sendFeedback(Component.literal("GodWarBridge vehicle hidden."));
 							return 1;
 						}))
-						.then(ClientCommandManager.literal("hud").executes(context -> {
+						.then(ClientCommands.literal("hud").executes(context -> {
 							hudVisible = !hudVisible;
 							context.getSource().sendFeedback(Component.literal("GodWarBridge HUD " + (hudVisible ? "shown" : "hidden") + "."));
 							return 1;
 						}))
-						.then(ClientCommandManager.literal("recenter").executes(context -> recenter(context.getSource().getClient())))
-						.then(ClientCommandManager.literal("map-scale")
-								.then(ClientCommandManager.argument("blocksPerAcUnit", DoubleArgumentType.doubleArg(0.01, 16.0))
+						.then(ClientCommands.literal("recenter").executes(context -> recenter(context.getSource().getClient())))
+						.then(ClientCommands.literal("map-scale")
+								.then(ClientCommands.argument("blocksPerAcUnit", DoubleArgumentType.doubleArg(0.01, 16.0))
 										.executes(context -> updateMapScale(context.getSource(), DoubleArgumentType.getDouble(context, "blocksPerAcUnit")))))
-						.then(ClientCommandManager.literal("heading")
-								.then(ClientCommandManager.argument("offsetDegrees", DoubleArgumentType.doubleArg(-3600, 3600))
+						.then(ClientCommands.literal("heading")
+								.then(ClientCommands.argument("offsetDegrees", DoubleArgumentType.doubleArg(-3600, 3600))
 										.executes(context -> updateHeading(context.getSource(), DoubleArgumentType.getDouble(context, "offsetDegrees")))))
-						.then(ClientCommandManager.literal("axis-x")
-								.then(ClientCommandManager.argument("sign", IntegerArgumentType.integer(-1, 1))
+						.then(ClientCommands.literal("axis-x")
+								.then(ClientCommands.argument("sign", IntegerArgumentType.integer(-1, 1))
 										.executes(context -> updateAxis(context.getSource(), "x", IntegerArgumentType.getInteger(context, "sign")))))
-						.then(ClientCommandManager.literal("axis-z")
-								.then(ClientCommandManager.argument("sign", IntegerArgumentType.integer(-1, 1))
+						.then(ClientCommands.literal("axis-z")
+								.then(ClientCommands.argument("sign", IntegerArgumentType.integer(-1, 1))
 										.executes(context -> updateAxis(context.getSource(), "z", IntegerArgumentType.getInteger(context, "sign")))))
-						.then(ClientCommandManager.literal("yaw-sign")
-								.then(ClientCommandManager.argument("sign", IntegerArgumentType.integer(-1, 1))
+						.then(ClientCommands.literal("yaw-sign")
+								.then(ClientCommands.argument("sign", IntegerArgumentType.integer(-1, 1))
 										.executes(context -> updateAxis(context.getSource(), "yaw", IntegerArgumentType.getInteger(context, "sign")))))
-						.then(ClientCommandManager.literal("smoothing")
-								.then(ClientCommandManager.argument("factor", DoubleArgumentType.doubleArg(0.05, 1.0))
+						.then(ClientCommands.literal("smoothing")
+								.then(ClientCommands.argument("factor", DoubleArgumentType.doubleArg(0.05, 1.0))
 										.executes(context -> updateSmoothing(context.getSource(), DoubleArgumentType.getDouble(context, "factor")))))
-						.then(ClientCommandManager.literal("debug").executes(context -> {
+						.then(ClientCommands.literal("debug").executes(context -> {
 							debugEnabled = !debugEnabled;
 							context.getSource().sendFeedback(Component.literal("GodWarBridge diagnostics " + (debugEnabled ? "enabled" : "disabled") + "."));
 							return 1;

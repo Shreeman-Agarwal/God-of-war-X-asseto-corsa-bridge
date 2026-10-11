@@ -54,7 +54,14 @@ def main() -> int:
                 if any(path in data for path in unexpected_absolute_paths):
                     raise ValueError(f"JAR entry {name} contains a developer-specific absolute path")
         model_entries = sorted(name for name in names if name.startswith("assets/godwarbridge/"))
-    print(f"PASS jar={JAR_PATH.relative_to(ROOT)} model_resources={len(model_entries)} textures={len(texture_resources)}")
+    sources_jar_path = JAR_PATH.with_name("godwarbridge-1.0.0-sources.jar")
+    if not sources_jar_path.is_file():
+        raise FileNotFoundError(f"Expected sources JAR not found: {sources_jar_path}")
+    with zipfile.ZipFile(sources_jar_path) as sources_jar:
+        source_backups = sorted(name for name in sources_jar.namelist() if name.endswith(".bak"))
+        if source_backups:
+            raise ValueError(f"Sources JAR contains backup files: {source_backups}")
+    print(f"PASS jar={JAR_PATH.relative_to(ROOT)} model_resources={len(model_entries)} textures={len(texture_resources)} sources_jar_backups=0")
     return 0
 
 

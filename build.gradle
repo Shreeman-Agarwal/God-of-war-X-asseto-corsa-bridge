@@ -31,6 +31,10 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+tasks.withType(AbstractArchiveTask).configureEach {
+	exclude("**/*.bak")
+}
+
 processResources {
 	exclude("**/*.bak")
 

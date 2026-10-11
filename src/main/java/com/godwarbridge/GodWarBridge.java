@@ -47,7 +47,7 @@ public class GodWarBridge implements ModInitializer {
 	) {
 		public static ACTelemetry offline() {
 			return new ACTelemetry(
-					false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+					false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 			);
 		}
 	}

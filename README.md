@@ -120,7 +120,7 @@ python tools\prepare_pagani_model.py --verify-only
 python tools\check_packaged_jar.py
 ```
 
-The GitHub Actions workflow runs those Python/model checks, Gradle `compileJava`, `compileClientJava`, `test`, and `build`, then checks the built JAR for both initializers, metadata, descriptor, GLB, every referenced PNG, duplicate ZIP names, and hardcoded developer paths. Successful workflow runs expose a downloadable JAR under the Actions run's **Artifacts** section, named `GodWarBridge-<commit-sha>` (14-day retention). The expected local output is `build/libs/godwarbridge-1.0.0.jar`.
+The GitHub Actions workflow runs those Python/model checks, Gradle `compileJava`, `compileClientJava`, `test`, and `build`, then checks the mod JAR for both initializers, metadata, descriptor, GLB, every referenced PNG, duplicate ZIP names, hardcoded developer paths, and backup files; it also verifies that the sources JAR contains no backup files. Successful workflow runs expose downloadable JARs under the Actions run's **Artifacts** section, named `GodWarBridge-<commit-sha>` (14-day retention). The expected local output is `build/libs/godwarbridge-1.0.0.jar`.
 
 ## Verification matrix
 
@@ -128,7 +128,7 @@ The GitHub Actions workflow runs those Python/model checks, Gradle `compileJava`
 |---|---|
 | Python sender syntax and eight synthetic protocol/shared-memory extraction tests | PASS in the v0 sandbox. |
 | Conversion from the existing GLB; external PNGs and strict descriptor/resource validation | PASS in the v0 sandbox. This is structural validation, not a BlendLib runtime load. |
-| Java `compileJava`, `compileClientJava`, JUnit coordinate tests, full Gradle build, final JAR verification, artifact upload | PASS on GitHub Actions for commit `7acab0f` ([run #38113380855](https://github.com/Shreeman-Agarwal/God-of-war-X-asseto-corsa-bridge/actions/runs/38113380855)); Java was unavailable in the local v0 sandbox. |
+| Java `compileJava`, `compileClientJava`, JUnit coordinate tests, full Gradle build, mod and sources JAR verification, artifact upload | PASS on GitHub Actions for implementation commit `d515a1f` ([run #38113847615](https://github.com/Shreeman-Agarwal/God-of-war-X-asseto-corsa-bridge/actions/runs/38113847615)); uploaded archives were inspected and contain no backup files. |
 | Live Assetto Corsa shared-memory reception | NOT RUN; requires the user's Windows AC installation and shared memory. |
 | Pagani rendered/moved in a running Minecraft world | NOT RUN; requires Minecraft 26.1.2, the matching Fabric/BlendLib runtime, and a graphics device. |
 | Wheel spin, long-session/performance measurements, Sodium/Iris compatibility | NOT RUN. |

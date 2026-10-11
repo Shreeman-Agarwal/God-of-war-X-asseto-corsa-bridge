@@ -8,6 +8,7 @@ import com.google.gson.JsonParser;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,8 +45,9 @@ public class GodWarBridgeClient implements ClientModInitializer {
                             0xB9000000
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             "GODW AR BRIDGE",
                             left + 8,
                             top + 7,
@@ -56,32 +58,36 @@ public class GodWarBridgeClient implements ClientModInitializer {
                             ? "AC: LIVE"
                             : "AC: WAITING FOR TELEMETRY";
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             connection,
                             left + 8,
                             top + 22,
                             data.connected() ? 0xFF55FF55 : 0xFFFFAA55
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             String.format("Speed: %.1f km/h", data.speedKmh()),
                             left + 8,
                             top + 37,
                             0xFFFFFFFF
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             "RPM: " + data.rpm() + "   Gear raw: " + data.gear(),
                             left + 8,
                             top + 49,
                             0xFFFFFFFF
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             String.format(
                                     "Throttle: %.0f%%   Brake: %.0f%%",
                                     data.throttle() * 100.0,
@@ -92,16 +98,18 @@ public class GodWarBridgeClient implements ClientModInitializer {
                             0xFFFFFFFF
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             String.format("Steering: %.3f", data.steering()),
                             left + 8,
                             top + 73,
                             0xFFFFFFFF
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             String.format(
                                     "AC X: %.1f  Y: %.1f",
                                     data.acX(),
@@ -112,8 +120,9 @@ public class GodWarBridgeClient implements ClientModInitializer {
                             0xFFDDDDFF
                     );
 
-                    graphics.drawString(
-                            minecraft.font,
+                    drawHudText(
+                            graphics,
+                            minecraft,
                             String.format(
                                     "AC Z: %.1f  Heading: %.3f",
                                     data.acZ(),
@@ -134,6 +143,17 @@ public class GodWarBridgeClient implements ClientModInitializer {
         receiver.start();
 
         GodWarBridge.LOGGER.info("GodWarBridge telemetry HUD registered.");
+    }
+
+    private static void drawHudText(
+            GuiGraphicsExtractor graphics,
+            Minecraft minecraft,
+            String text,
+            int x,
+            int y,
+            int color
+    ) {
+        graphics.text(minecraft.font, text, x, y, color, false);
     }
 
     private void receiveTelemetry() {

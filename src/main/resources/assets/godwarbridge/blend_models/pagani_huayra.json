@@ -1,0 +1,362 @@
+{
+  "format_version": 1,
+  "profile": "blendlib:rigid_v1",
+  "mesh": "godwarbridge:models3d/pagani_huayra.glb",
+  "units_per_block": 1.0,
+  "materials": {
+    "EXT_Skin_00": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_METAL_Alluminio": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Chassis": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_003.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Decals_Flat": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_004.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "INT_Display_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_006.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Plastica_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_006.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_cinture_NM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_008.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_METALLO_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_006.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Display_LUMINOSI": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_009.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Carbon_40": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_010.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_PLASTICA_occ": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_011.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_METALLO_occ_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_012.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Leather_00": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_010.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_SPEAKERS_70": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_012.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Carbon_SPEAKERS_70": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_011.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_METALLO_REF_AT": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_009.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "INT_Nero_FLAT": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_006.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Cuciture": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_013.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "INT_Grid_NM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_015.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "INT_vetri_laterali": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_016.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_vetri_Griglia": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_017.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Gllass_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_009.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_METALLO_occ_CAMBIO": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_012.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Stoffa_40": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_011.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Carbon_40_satinato": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_010.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Decals_FLAT_ALFA": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_009.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "INT_MAT_Gomma_occ_REF": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_011.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Carbon_sponde_70": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_011.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_MAT_Leather_Tappetini": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_010.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Plastica_Flat": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_006.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Kiavetta": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_019.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Plastica_REF_ALFA": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_009.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "EXT_Decals_Metal_NM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_004.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Decals_Metal_NM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_004.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Pedali_AT": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_022.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Windscreen": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_016.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "INT_Decals_Volante": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_023.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Platica_NERA": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon1": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Lights": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_025.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Grid_NM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_027.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Glass": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_028.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Glass_Grid": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_017.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon1_Rev": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon_Rev": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon2": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon2_Rev": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon3": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Carbon3_rev": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_001.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Lights_glass": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_029.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_BrakeClaw": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_032.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Disk": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_034.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Rim_Base": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_035.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Decals_RIM": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_004.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Tyre": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_037.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_Decals_Plastic": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_004.png",
+      "mode": "cutout",
+      "emissive": false,
+      "double_sided": true
+    },
+    "EXT_Mirror": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_038.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    },
+    "EXT_PLATE_plastic": {
+      "base_color": "godwarbridge:textures/blendlib/pagani_huayra__texture_040.png",
+      "mode": "opaque",
+      "emissive": false,
+      "double_sided": false
+    }
+  }
+}

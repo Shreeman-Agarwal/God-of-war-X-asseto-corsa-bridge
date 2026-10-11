@@ -1,8 +1,3 @@
-# Automatically build the project and run any configured tests for every push
-# and submitted pull request. This can help catch issues that only occur on
-# certain platforms or Java versions, and provides a first line of defence
-# against bad commits.
-
 name: build
 on: [pull_request, push]
 
@@ -19,12 +14,26 @@ jobs:
         with:
           java-version: '25'
           distribution: 'microsoft'
+      - name: setup python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: build
-        run: ./gradlew build
+      - name: validate model resources
+        run: python -m tools.prepare_pagani_model --verify-only
+      - name: python checks
+        run: |
+          python -m py_compile tools/assetto_corsa_sender.py tools/prepare_pagani_model.py tools/check_packaged_jar.py tests/python/test_assetto_corsa_sender.py
+          python -m unittest discover -s tests/python -v
+      - name: compile, test, and build
+        run: ./gradlew compileJava compileClientJava test build
+      - name: validate packaged jar
+        run: python tools/check_packaged_jar.py
       - name: capture build artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: Artifacts
-          path: build/libs/
+          name: GodWarBridge-${{ github.sha }}
+          path: build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

@@ -128,7 +128,7 @@ The GitHub Actions workflow runs those Python/model checks, Gradle `compileJava`
 |---|---|
 | Python sender syntax and eight synthetic protocol/shared-memory extraction tests | PASS in the v0 sandbox. |
 | Conversion from the existing GLB; external PNGs and strict descriptor/resource validation | PASS in the v0 sandbox. This is structural validation, not a BlendLib runtime load. |
-| Java `compileJava`, `compileClientJava`, JUnit coordinate tests, full Gradle build, final JAR verification | NOT RUN in this sandbox (Java is unavailable); GitHub Actions is configured to run them. Update this table from the actual latest Actions result before claiming a CI pass. |
+| Java `compileJava`, `compileClientJava`, JUnit coordinate tests, full Gradle build, final JAR verification, artifact upload | PASS on GitHub Actions for commit `7acab0f` ([run #38113380855](https://github.com/Shreeman-Agarwal/God-of-war-X-asseto-corsa-bridge/actions/runs/38113380855)); Java was unavailable in the local v0 sandbox. |
 | Live Assetto Corsa shared-memory reception | NOT RUN; requires the user's Windows AC installation and shared memory. |
 | Pagani rendered/moved in a running Minecraft world | NOT RUN; requires Minecraft 26.1.2, the matching Fabric/BlendLib runtime, and a graphics device. |
 | Wheel spin, long-session/performance measurements, Sodium/Iris compatibility | NOT RUN. |

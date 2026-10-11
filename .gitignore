@@ -1,3 +1,6 @@
+# local repair backups
+*.repair-backup
+
 # gradle
 
 .gradle/

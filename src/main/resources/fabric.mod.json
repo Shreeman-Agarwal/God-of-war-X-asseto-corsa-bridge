@@ -21,7 +21,7 @@
                     "fabricloader":  "\u003e=0.19.5",
                     "minecraft":  "~26.1.2",
                     "java":  "\u003e=25",
-                    "fabric-api":  "*",
-                    "blendlib":  "*"
+                    "fabric-api":  ">=0.155.3+26.1.2",
+                    "blendlib":  "1.0.0-beta.3+26.1.2"
                 }
 }

@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class GodWarBridge implements ModInitializer {
 	public static final String MOD_ID = "godwarbridge";
@@ -28,6 +29,31 @@ public class GodWarBridge implements ModInitializer {
 
 	private static final BlockingQueue<String> EVENTS =
 			new LinkedBlockingQueue<>(1000);
+
+	public record ACTelemetry(
+			boolean connected,
+			double speedKmh,
+			int rpm,
+			int gear,
+			double throttle,
+			double brake,
+			double steering,
+			double heading,
+			double acX,
+			double acY,
+			double acZ,
+			int status,
+			long physicsPacket
+	) {
+		public static ACTelemetry offline() {
+			return new ACTelemetry(
+					false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			);
+		}
+	}
+
+	public static final AtomicReference<ACTelemetry> LATEST_TELEMETRY =
+			new AtomicReference<>(ACTelemetry.offline());
 
 	@Override
 	public void onInitialize() {
